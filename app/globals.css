@@ -17,6 +17,11 @@ body {
   display: block; position: relative;
   color: inherit; text-decoration: none; cursor: pointer;
 }
+.item, .detail-photo {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none; user-select: none;
+  -webkit-touch-callout: none;
+}
 .frame {
   position: relative; overflow: hidden; aspect-ratio: 3 / 4;
   touch-action: pan-y;
