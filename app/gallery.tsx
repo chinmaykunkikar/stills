@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { flushSync } from "react-dom";
+import { attachTilt, ensureTiltAccess } from "./device-tilt";
 import { sceneIndex, scenes } from "./scenes";
 import {
   activateScene,
@@ -9,6 +10,7 @@ import {
   holdScenePointer,
   pointScene,
   setSceneDrift,
+  tiltScene,
 } from "./splat-viewer";
 
 const HOVER_DELAY_MS = 220;
@@ -92,7 +94,18 @@ export default function Gallery({ initialScene }: GalleryProps) {
     const frame = detailFrameRef.current;
     if (index < 0 || !frame) return;
     let disposed = false;
+    let tilting = false;
     setSceneDrift(true);
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const detachTilt = reducedMotion
+      ? null
+      : attachTilt((nx, ny) => {
+          if (!tilting) {
+            tilting = true;
+            setSceneDrift(false);
+          }
+          tiltScene(nx, ny);
+        });
     const indicator = window.setTimeout(
       () => setDetailState("loading"),
       LOADING_INDICATOR_DELAY_MS,
@@ -111,6 +124,7 @@ export default function Gallery({ initialScene }: GalleryProps) {
     return () => {
       disposed = true;
       window.clearTimeout(indicator);
+      detachTilt?.();
       setSceneDrift(false);
       holdScenePointer(false);
       setDetailState("idle");
@@ -119,6 +133,7 @@ export default function Gallery({ initialScene }: GalleryProps) {
   }, [activeScene]);
 
   function openScene(name: string) {
+    void ensureTiltAccess();
     window.clearTimeout(hoverTimer.current);
     window.clearTimeout(indicatorTimer.current);
     deactivateScene();

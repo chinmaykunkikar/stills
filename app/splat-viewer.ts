@@ -50,6 +50,11 @@ export function pointScene(nx: number, ny: number): void {
   viewerInstance?.pointTo(nx, ny);
 }
 
+export function tiltScene(nx: number, ny: number): void {
+  if (pointerHeld) return;
+  viewerInstance?.pointTo(nx, ny);
+}
+
 async function createViewer(): Promise<Viewer> {
   const [THREE, spark] = await Promise.all([import("three"), import("@sparkjsdev/spark")]);
 
