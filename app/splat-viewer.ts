@@ -5,7 +5,8 @@ import type { SceneEntry } from "./scenes";
 const DEFAULT_SWEEP = 0.15;
 const FETCH_TIMEOUT_MS = 30000;
 const INIT_TIMEOUT_MS = 20000;
-const BYTES_CACHE_LIMIT = 3;
+const DESKTOP_CACHE_LIMIT = 9;
+const HANDHELD_CACHE_LIMIT = 3;
 const SMOOTHING = 8;
 const DRIFT_X = 0.48;
 const DRIFT_Y = 0.14;
@@ -41,6 +42,13 @@ export function holdScenePointer(on: boolean): void {
 
 export function scenesRenderable(): boolean {
   return !viewerBroken;
+}
+
+function bytesCacheLimit(): number {
+  const memoryGb = (navigator as Navigator & { deviceMemory?: number }).deviceMemory;
+  if (memoryGb !== undefined && memoryGb <= 4) return HANDHELD_CACHE_LIMIT;
+  if (window.matchMedia("(pointer: coarse)").matches) return HANDHELD_CACHE_LIMIT;
+  return DESKTOP_CACHE_LIMIT;
 }
 
 function rejectAfter(ms: number): Promise<never> {
@@ -112,6 +120,7 @@ async function createViewer(): Promise<Viewer> {
   const desired = new THREE.Vector3(0, 0, 0);
   const ORIGIN = new THREE.Vector3(0, 0, 0);
   const bytesCache = new Map<string, ArrayBuffer>();
+  const cacheLimit = bytesCacheLimit();
   const probePixel = new Uint8Array(4);
   let currentSplat: SplatMesh | null = null;
   let currentUrl: string | null = null;
@@ -132,7 +141,7 @@ async function createViewer(): Promise<Viewer> {
       if (!response.ok) throw new Error(`${url} responded ${response.status}`);
       const bytes = await response.arrayBuffer();
       bytesCache.set(url, bytes);
-      while (bytesCache.size > BYTES_CACHE_LIMIT) {
+      while (bytesCache.size > cacheLimit) {
         const oldest = bytesCache.keys().next();
         if (oldest.done) break;
         bytesCache.delete(oldest.value);
