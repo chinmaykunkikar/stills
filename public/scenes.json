@@ -1,0 +1,56 @@
+[
+  {
+    "name": "IMG_1901",
+    "sog": "sogs/IMG_1901.sog?v=srgb1",
+    "thumb": "thumbs/IMG_1901.jpg?v=srgb1",
+    "aspect": 0.75,
+    "focus": 2.2,
+    "fov": 67.3,
+    "caption": "IMG_1901 \u00b7 26mm \u00b7 f/1.6 \u00b7 ISO50"
+  },
+  {
+    "name": "IMG_1902",
+    "sog": "sogs/IMG_1902.sog?v=srgb1",
+    "thumb": "thumbs/IMG_1902.jpg?v=srgb1",
+    "aspect": 0.75,
+    "focus": 2.25,
+    "fov": 67.3,
+    "caption": "IMG_1902 \u00b7 26mm \u00b7 f/1.6 \u00b7 ISO50"
+  },
+  {
+    "name": "IMG_1903",
+    "sog": "sogs/IMG_1903.sog?v=srgb1",
+    "thumb": "thumbs/IMG_1903.jpg?v=srgb1",
+    "aspect": 0.75,
+    "focus": 2.29,
+    "fov": 67.3,
+    "caption": "IMG_1903 \u00b7 26mm \u00b7 f/1.6 \u00b7 ISO50"
+  },
+  {
+    "name": "IMG_1904",
+    "sog": "sogs/IMG_1904.sog?v=srgb1",
+    "thumb": "thumbs/IMG_1904.jpg?v=srgb1",
+    "aspect": 0.75,
+    "focus": 2.36,
+    "fov": 67.3,
+    "caption": "IMG_1904 \u00b7 26mm \u00b7 f/1.6 \u00b7 ISO50"
+  },
+  {
+    "name": "IMG_1906",
+    "sog": "sogs/IMG_1906.sog?v=srgb1",
+    "thumb": "thumbs/IMG_1906.jpg?v=srgb1",
+    "aspect": 0.75,
+    "focus": 2.25,
+    "fov": 67.3,
+    "caption": "IMG_1906 \u00b7 26mm \u00b7 f/1.6 \u00b7 ISO50"
+  },
+  {
+    "name": "IMG_1908",
+    "sog": "sogs/IMG_1908.sog?v=srgb1",
+    "thumb": "thumbs/IMG_1908.jpg?v=srgb1",
+    "aspect": 0.75,
+    "focus": 2.43,
+    "fov": 67.3,
+    "caption": "IMG_1908 \u00b7 26mm \u00b7 f/1.6 \u00b7 ISO50"
+  }
+]
