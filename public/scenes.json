@@ -7,6 +7,7 @@
     "focus": 3.79,
     "fov": 67.3,
     "maxParallax": 0.222,
+    "sweep": 0.15,
     "caption": "26mm \u00b7 f/1.75 \u00b7 ISO389",
     "meta": {
       "camera": "Pixel 5",
@@ -24,6 +25,7 @@
     "focus": 4.16,
     "fov": 40.46,
     "maxParallax": 0.292,
+    "sweep": 0.15,
     "caption": "f/1.8 \u00b7 ISO50",
     "meta": {
       "camera": "OnePlus 11R 5G",
@@ -41,6 +43,7 @@
     "focus": 20.92,
     "fov": 40.46,
     "maxParallax": 0.872,
+    "sweep": 0.15,
     "caption": "f/1.8 \u00b7 ISO50",
     "meta": {
       "camera": "OnePlus 11R 5G",
@@ -58,6 +61,7 @@
     "focus": 11.88,
     "fov": 40.46,
     "maxParallax": 0.806,
+    "sweep": 0.15,
     "caption": "f/1.8 \u00b7 ISO50",
     "meta": {
       "camera": "OnePlus 11R 5G",
@@ -75,6 +79,7 @@
     "focus": 2.31,
     "fov": 71.59,
     "maxParallax": 0.13,
+    "sweep": 0.15,
     "caption": "24mm \u00b7 f/1.8 \u00b7 ISO640",
     "meta": {
       "camera": "OnePlus 11R 5G",
@@ -92,6 +97,7 @@
     "focus": 4.34,
     "fov": 39.65,
     "maxParallax": 0.391,
+    "sweep": 0.1,
     "caption": "48mm \u00b7 f/1.8 \u00b7 ISO50",
     "meta": {
       "camera": "OnePlus 11R 5G",
@@ -109,6 +115,7 @@
     "focus": 6.25,
     "fov": 39.65,
     "maxParallax": 0.456,
+    "sweep": 0.15,
     "caption": "48mm \u00b7 f/1.8 \u00b7 ISO64",
     "meta": {
       "camera": "OnePlus 11R 5G",
@@ -126,6 +133,7 @@
     "focus": 54.76,
     "fov": 26.67,
     "maxParallax": 2.818,
+    "sweep": 0.1,
     "caption": "73mm \u00b7 f/5.6 \u00b7 ISO100",
     "meta": {
       "camera": "ILCE-6400",
@@ -143,6 +151,7 @@
     "focus": 2.43,
     "fov": 67.3,
     "maxParallax": 0.225,
+    "sweep": 0.15,
     "caption": "26mm \u00b7 f/1.6 \u00b7 ISO50",
     "meta": {
       "camera": "iPhone 15",

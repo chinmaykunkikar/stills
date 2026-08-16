@@ -16,6 +16,7 @@ export type SceneEntry = {
   focus: number;
   fov: number;
   maxParallax: number;
+  sweep?: number;
   caption: string;
   meta: SceneMeta;
 };

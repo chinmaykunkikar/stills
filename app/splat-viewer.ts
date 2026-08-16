@@ -1,7 +1,7 @@
 import type { SplatMesh } from "@sparkjsdev/spark";
 import type { SceneEntry } from "./scenes";
 
-const SWEEP = 0.15;
+const DEFAULT_SWEEP = 0.15;
 const SMOOTHING = 8;
 const DRIFT_X = 0.48;
 const DRIFT_Y = 0.14;
@@ -122,7 +122,7 @@ async function createViewer(): Promise<Viewer> {
 
     camera.fov = entry.fov || 60;
     parallax = Math.min(
-      (SWEEP / 2) * entry.focus * Math.tan((camera.fov * Math.PI) / 360),
+      ((entry.sweep ?? DEFAULT_SWEEP) / 2) * entry.focus * Math.tan((camera.fov * Math.PI) / 360),
       entry.maxParallax,
     );
     camera.aspect = frame.clientWidth / frame.clientHeight;
