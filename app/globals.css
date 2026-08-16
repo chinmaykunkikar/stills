@@ -185,9 +185,7 @@ html[data-vt="back"] .wall { view-transition-class: gallery-shell-back; }
 ::view-transition-old(.gallery-shell-forward) {
   animation: 0.32s cubic-bezier(0.4, 0, 1, 1) both gallery-shell-fade-out;
 }
-::view-transition-new(.gallery-shell-back) {
-  animation: 0.3s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both gallery-shell-fade-in;
-}
+::view-transition-new(.gallery-shell-back) { animation: none; }
 
 @keyframes wordmark-out {
   from { opacity: 1; transform: translateY(0); }
@@ -198,27 +196,31 @@ html[data-vt="back"] .wall { view-transition-class: gallery-shell-back; }
   to { opacity: 1; transform: translateY(0); }
 }
 ::view-transition-group(wordmark) {
-  z-index: 40; animation-duration: 0.5s;
-  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); animation-fill-mode: both;
+  z-index: 40; animation-duration: 0.4s;
+  animation-timing-function: cubic-bezier(0.32, 0.94, 0.36, 1); animation-fill-mode: both;
 }
 ::view-transition-image-pair(wordmark) { isolation: isolate; }
 ::view-transition-old(wordmark), ::view-transition-new(wordmark) {
   width: auto; height: 100%; object-fit: none; object-position: left center;
 }
 ::view-transition-old(wordmark) {
-  animation: 0.28s cubic-bezier(0.4, 0, 1, 1) both wordmark-out;
+  animation: 0.16s cubic-bezier(0.4, 0, 1, 1) both wordmark-out;
 }
 ::view-transition-new(wordmark) {
-  animation: 0.42s cubic-bezier(0.16, 1, 0.3, 1) 0.14s both wordmark-in;
+  animation: 0.32s cubic-bezier(0.32, 0.94, 0.36, 1) 0.08s both wordmark-in;
 }
+html[data-vt="back"]::view-transition-old(root) {
+  animation: 0.16s cubic-bezier(0.4, 0, 1, 1) both gallery-shell-fade-out;
+}
+html[data-vt="back"]::view-transition-new(root) { animation: none; }
 
 ::view-transition-group(.gallery-image-grow) {
   z-index: 30; animation-duration: 0.6s; animation-delay: 0.18s;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); animation-fill-mode: both;
 }
 ::view-transition-group(.gallery-image-shrink) {
-  z-index: 30; animation-duration: 0.56s; animation-delay: 0.2s;
-  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); animation-fill-mode: both;
+  z-index: 30; animation-duration: 0.4s;
+  animation-timing-function: cubic-bezier(0.32, 0.94, 0.36, 1); animation-fill-mode: both;
 }
 ::view-transition-image-pair(.gallery-image-grow),
 ::view-transition-image-pair(.gallery-image-shrink) { isolation: isolate; }
@@ -229,10 +231,10 @@ html[data-vt="back"] .wall { view-transition-class: gallery-shell-back; }
   animation: 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both gallery-image-new;
 }
 ::view-transition-old(.gallery-image-shrink) {
-  animation: 0.26s cubic-bezier(0.4, 0, 1, 1) 0.2s both gallery-image-old;
+  animation: 0.18s cubic-bezier(0.4, 0, 1, 1) both gallery-image-old;
 }
 ::view-transition-new(.gallery-image-shrink) {
-  animation: 0.56s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both gallery-image-new;
+  animation: 0.4s cubic-bezier(0.32, 0.94, 0.36, 1) both gallery-image-new;
 }
 
 ::view-transition-group(.gallery-details-forward) {
@@ -241,21 +243,21 @@ html[data-vt="back"] .wall { view-transition-class: gallery-shell-back; }
   overflow: clip;
 }
 ::view-transition-group(.gallery-details-back) {
-  z-index: 20; animation-duration: 0.92s;
-  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); animation-fill-mode: both;
+  z-index: 20; animation-duration: 0.4s;
+  animation-timing-function: cubic-bezier(0.32, 0.94, 0.36, 1); animation-fill-mode: both;
   overflow: clip;
 }
 ::view-transition-new(.gallery-details-forward) {
   animation: 0.38s cubic-bezier(0.16, 1, 0.3, 1) 0.58s both gallery-detail-reveal;
 }
 ::view-transition-old(.gallery-details-back) {
-  animation: 0.32s cubic-bezier(0.4, 0, 1, 1) both gallery-detail-conceal;
+  animation: 0.22s cubic-bezier(0.4, 0, 1, 1) both gallery-detail-conceal;
 }
 @media (max-width: 959px) {
   ::view-transition-new(.gallery-details-forward) {
     animation: 0.38s cubic-bezier(0.16, 1, 0.3, 1) 0.58s both gallery-detail-lift;
   }
   ::view-transition-old(.gallery-details-back) {
-    animation: 0.32s cubic-bezier(0.4, 0, 1, 1) both gallery-detail-drop;
+    animation: 0.22s cubic-bezier(0.4, 0, 1, 1) both gallery-detail-drop;
   }
 }

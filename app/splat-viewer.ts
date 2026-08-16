@@ -1,4 +1,5 @@
 import type { SplatMesh } from "@sparkjsdev/spark";
+import type { Vector3 } from "three";
 import type { SceneEntry } from "./scenes";
 
 const DEFAULT_SWEEP = 0.15;
@@ -17,6 +18,7 @@ type Viewer = {
   activate: (entry: SceneEntry, frame: HTMLElement, token: number) => Promise<boolean>;
   deactivate: () => void;
   pointTo: (nx: number, ny: number) => void;
+  recenter: (ms: number) => Promise<void>;
 };
 
 let viewerPromise: Promise<Viewer> | null = null;
@@ -55,6 +57,10 @@ export function tiltScene(nx: number, ny: number): void {
   viewerInstance?.pointTo(nx, ny);
 }
 
+export function recenterScene(ms: number): Promise<void> {
+  return viewerInstance ? viewerInstance.recenter(ms) : Promise.resolve();
+}
+
 async function createViewer(): Promise<Viewer> {
   const [THREE, spark] = await Promise.all([import("three"), import("@sparkjsdev/spark")]);
 
@@ -72,11 +78,13 @@ async function createViewer(): Promise<Viewer> {
 
   const target = new THREE.Vector3(0, 0, -2.5);
   const desired = new THREE.Vector3(0, 0, 0);
+  const ORIGIN = new THREE.Vector3(0, 0, 0);
   const bytesCache = new Map<string, ArrayBuffer>();
   const probePixel = new Uint8Array(4);
   let currentSplat: SplatMesh | null = null;
   let currentUrl: string | null = null;
   let parallax = 0.08;
+  let settle: { start: number; ms: number; from: Vector3; finish: () => void } | null = null;
   let active = false;
   let liveStart = 0;
   let renderUntil = 0;
@@ -163,6 +171,17 @@ async function createViewer(): Promise<Viewer> {
 
   function deactivate(): void {
     active = false;
+    settle?.finish();
+    settle = null;
+  }
+
+  function recenter(ms: number): Promise<void> {
+    if (!active || camera.position.lengthSq() === 0) return Promise.resolve();
+    settle?.finish();
+    return new Promise((resolve) => {
+      settle = { start: performance.now(), ms, from: camera.position.clone(), finish: resolve };
+      renderUntil = performance.now() + ms + 60;
+    });
   }
 
   function pointTo(nx: number, ny: number): void {
@@ -174,6 +193,18 @@ async function createViewer(): Promise<Viewer> {
     const dt = Math.min((time - lastTime) / 1000, 0.1);
     lastTime = time;
     if (!active) return;
+    if (settle) {
+      const progress = Math.min((time - settle.start) / settle.ms, 1);
+      camera.position.lerpVectors(settle.from, ORIGIN, 1 - Math.pow(1 - progress, 3));
+      camera.lookAt(target);
+      renderer.render(scene3d, camera);
+      if (progress < 1) return;
+      const finish = settle.finish;
+      settle = null;
+      desired.set(0, 0, 0);
+      finish();
+      return;
+    }
     const drifting = driftEnabled && !pointerHeld;
     if (drifting) {
       const elapsed = time - liveStart;
@@ -190,7 +221,7 @@ async function createViewer(): Promise<Viewer> {
     renderer.render(scene3d, camera);
   });
 
-  const viewer: Viewer = { activate, deactivate, pointTo };
+  const viewer: Viewer = { activate, deactivate, pointTo, recenter };
   viewerInstance = viewer;
   return viewer;
 }

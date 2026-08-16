@@ -9,6 +9,7 @@ import {
   deactivateScene,
   holdScenePointer,
   pointScene,
+  recenterScene,
   setSceneDrift,
   tiltScene,
 } from "./splat-viewer";
@@ -16,6 +17,7 @@ import {
 const HOVER_DELAY_MS = 220;
 const LOADING_INDICATOR_DELAY_MS = 180;
 const DRAG_SLOP_PX = 8;
+const RECENTER_MS = 130;
 
 type GalleryProps = {
   initialScene?: string;
@@ -41,6 +43,7 @@ export default function Gallery({ initialScene }: GalleryProps) {
   const indicatorTimer = useRef(0);
   const gridScroll = useRef(0);
   const pressOrigin = useRef({ x: 0, y: 0 });
+  const closing = useRef(false);
 
   const transitionTo = useCallback((next: string | null) => {
     const apply = () => {
@@ -77,8 +80,13 @@ export default function Gallery({ initialScene }: GalleryProps) {
   }, [transitionTo]);
 
   const closeScene = useCallback(() => {
-    window.history.pushState(null, "", "/");
-    transitionTo(null);
+    if (closing.current) return;
+    closing.current = true;
+    void recenterScene(RECENTER_MS).then(() => {
+      closing.current = false;
+      window.history.pushState(null, "", "/");
+      transitionTo(null);
+    });
   }, [transitionTo]);
 
   useEffect(() => {
