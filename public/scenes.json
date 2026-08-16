@@ -20,22 +20,6 @@
     "sog": "sogs/photo-02.sog?v=2",
     "thumb": "thumbs/photo-02.jpg?v=2",
     "aspect": 0.75,
-    "focus": 45.43,
-    "fov": 40.46,
-    "caption": "f/1.8 \u00b7 ISO320",
-    "meta": {
-      "camera": "OnePlus 11R 5G",
-      "lens": "OnePlus 11R 5G back camera 5.59mm f/1.8",
-      "exposure": "f/1.8 \u00b7 1/33 \u00b7 ISO320",
-      "dimensions": "3072 \u00d7 4096",
-      "date": "Dec 5, 2023"
-    }
-  },
-  {
-    "name": "photo-03",
-    "sog": "sogs/photo-03.sog?v=2",
-    "thumb": "thumbs/photo-03.jpg?v=2",
-    "aspect": 0.75,
     "focus": 4.16,
     "fov": 40.46,
     "caption": "f/1.8 \u00b7 ISO50",
@@ -48,9 +32,9 @@
     }
   },
   {
-    "name": "photo-04",
-    "sog": "sogs/photo-04.sog?v=2",
-    "thumb": "thumbs/photo-04.jpg?v=2",
+    "name": "photo-03",
+    "sog": "sogs/photo-03.sog?v=2",
+    "thumb": "thumbs/photo-03.jpg?v=2",
     "aspect": 0.75,
     "focus": 20.92,
     "fov": 40.46,
@@ -64,9 +48,9 @@
     }
   },
   {
-    "name": "photo-05",
-    "sog": "sogs/photo-05.sog?v=2",
-    "thumb": "thumbs/photo-05.jpg?v=2",
+    "name": "photo-04",
+    "sog": "sogs/photo-04.sog?v=2",
+    "thumb": "thumbs/photo-04.jpg?v=2",
     "aspect": 0.75,
     "focus": 11.88,
     "fov": 40.46,
@@ -80,25 +64,9 @@
     }
   },
   {
-    "name": "photo-06",
-    "sog": "sogs/photo-06.sog?v=2",
-    "thumb": "thumbs/photo-06.jpg?v=2",
-    "aspect": 0.75,
-    "focus": 33.86,
-    "fov": 39.65,
-    "caption": "48mm \u00b7 f/1.8 \u00b7 ISO640",
-    "meta": {
-      "camera": "OnePlus 11R 5G",
-      "lens": "OnePlus 11R 5G back camera 5.59mm f/1.8",
-      "exposure": "48mm \u00b7 f/1.8 \u00b7 1/50 \u00b7 ISO640",
-      "dimensions": "3072 \u00d7 4096",
-      "date": "May 3, 2025"
-    }
-  },
-  {
-    "name": "photo-07",
-    "sog": "sogs/photo-07.sog?v=2",
-    "thumb": "thumbs/photo-07.jpg?v=2",
+    "name": "photo-05",
+    "sog": "sogs/photo-05.sog?v=2",
+    "thumb": "thumbs/photo-05.jpg?v=2",
     "aspect": 0.75,
     "focus": 2.31,
     "fov": 71.59,
@@ -112,9 +80,9 @@
     }
   },
   {
-    "name": "photo-08",
-    "sog": "sogs/photo-08.sog?v=2",
-    "thumb": "thumbs/photo-08.jpg?v=2",
+    "name": "photo-06",
+    "sog": "sogs/photo-06.sog?v=2",
+    "thumb": "thumbs/photo-06.jpg?v=2",
     "aspect": 0.75,
     "focus": 4.34,
     "fov": 39.65,
@@ -128,9 +96,9 @@
     }
   },
   {
-    "name": "photo-09",
-    "sog": "sogs/photo-09.sog?v=2",
-    "thumb": "thumbs/photo-09.jpg?v=2",
+    "name": "photo-07",
+    "sog": "sogs/photo-07.sog?v=2",
+    "thumb": "thumbs/photo-07.jpg?v=2",
     "aspect": 0.75,
     "focus": 6.25,
     "fov": 39.65,
@@ -144,25 +112,9 @@
     }
   },
   {
-    "name": "photo-10",
-    "sog": "sogs/photo-10.sog?v=2",
-    "thumb": "thumbs/photo-10.jpg?v=2",
-    "aspect": 0.75,
-    "focus": 133.97,
-    "fov": 71.59,
-    "caption": "24mm \u00b7 f/1.8 \u00b7 ISO50",
-    "meta": {
-      "camera": "OnePlus 11R 5G",
-      "lens": "OnePlus 11R 5G back camera 5.59mm f/1.8",
-      "exposure": "24mm \u00b7 f/1.8 \u00b7 1/2864 \u00b7 ISO50",
-      "dimensions": "2304 \u00d7 3072",
-      "date": "Jul 31, 2025"
-    }
-  },
-  {
-    "name": "photo-11",
-    "sog": "sogs/photo-11.sog?v=2",
-    "thumb": "thumbs/photo-11.jpg?v=2",
+    "name": "photo-08",
+    "sog": "sogs/photo-08.sog?v=2",
+    "thumb": "thumbs/photo-08.jpg?v=2",
     "aspect": 0.75,
     "focus": 54.76,
     "fov": 26.67,
@@ -176,9 +128,9 @@
     }
   },
   {
-    "name": "photo-12",
-    "sog": "sogs/photo-12.sog?v=2",
-    "thumb": "thumbs/photo-12.jpg?v=2",
+    "name": "photo-09",
+    "sog": "sogs/photo-09.sog?v=2",
+    "thumb": "thumbs/photo-09.jpg?v=2",
     "aspect": 0.75,
     "focus": 2.43,
     "fov": 67.3,
