@@ -6,8 +6,21 @@ body {
 .wordmark {
   position: fixed; top: 20px; left: 24px; z-index: 2;
   color: #fff; mix-blend-mode: difference;
-  font-size: 13px; letter-spacing: 0.02em;
+  font-size: 13px; letter-spacing: 0.02em; text-transform: lowercase;
+  max-width: calc(100vw - 140px);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  view-transition-name: wordmark;
 }
+.close {
+  position: fixed; top: 5px; right: 8px; z-index: 3;
+  appearance: none; background: none; border: 0; padding: 15px 16px;
+  font-family: inherit; font-size: 13px; letter-spacing: 0.02em;
+  text-transform: lowercase; color: #fff; mix-blend-mode: difference;
+  cursor: pointer; -webkit-tap-highlight-color: transparent;
+  transition: opacity 0.2s;
+}
+.close:hover { opacity: 0.55; }
+.close:focus-visible { outline: 1px solid currentColor; outline-offset: 2px; }
 .wall {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
   max-width: 1120px; margin: 0 auto;
@@ -174,6 +187,29 @@ html[data-vt="back"] .wall { view-transition-class: gallery-shell-back; }
 }
 ::view-transition-new(.gallery-shell-back) {
   animation: 0.3s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both gallery-shell-fade-in;
+}
+
+@keyframes wordmark-out {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-90%); }
+}
+@keyframes wordmark-in {
+  from { opacity: 0; transform: translateY(90%); }
+  to { opacity: 1; transform: translateY(0); }
+}
+::view-transition-group(wordmark) {
+  z-index: 40; animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); animation-fill-mode: both;
+}
+::view-transition-image-pair(wordmark) { isolation: isolate; }
+::view-transition-old(wordmark), ::view-transition-new(wordmark) {
+  width: auto; height: 100%; object-fit: none; object-position: left center;
+}
+::view-transition-old(wordmark) {
+  animation: 0.28s cubic-bezier(0.4, 0, 1, 1) both wordmark-out;
+}
+::view-transition-new(wordmark) {
+  animation: 0.42s cubic-bezier(0.16, 1, 0.3, 1) 0.14s both wordmark-in;
 }
 
 ::view-transition-group(.gallery-image-grow) {

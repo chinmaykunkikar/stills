@@ -15,6 +15,7 @@ import {
 
 const HOVER_DELAY_MS = 220;
 const LOADING_INDICATOR_DELAY_MS = 180;
+const DRAG_SLOP_PX = 8;
 
 type GalleryProps = {
   initialScene?: string;
@@ -39,6 +40,7 @@ export default function Gallery({ initialScene }: GalleryProps) {
   const hoverTimer = useRef(0);
   const indicatorTimer = useRef(0);
   const gridScroll = useRef(0);
+  const pressOrigin = useRef({ x: 0, y: 0 });
 
   const transitionTo = useCallback((next: string | null) => {
     const apply = () => {
@@ -194,6 +196,10 @@ export default function Gallery({ initialScene }: GalleryProps) {
   if (detailEntry) {
     return (
       <div className="detail">
+        <div className="wordmark">{detailEntry.title}.</div>
+        <button type="button" className="close" onClick={closeScene}>
+          close
+        </button>
         <div className="detail-inner">
           <aside
             className="detail-panel"
@@ -232,8 +238,13 @@ export default function Gallery({ initialScene }: GalleryProps) {
               .join(" ")}
             href="/"
             aria-label="Back to gallery"
+            onPointerDown={(event) => {
+              pressOrigin.current = { x: event.clientX, y: event.clientY };
+            }}
             onClick={(event) => {
               event.preventDefault();
+              const { x, y } = pressOrigin.current;
+              if (Math.hypot(event.clientX - x, event.clientY - y) > DRAG_SLOP_PX) return;
               closeScene();
             }}
           >
@@ -264,6 +275,7 @@ export default function Gallery({ initialScene }: GalleryProps) {
 
   return (
     <div className="wall" style={{ viewTransitionName: "gallery-shell" }}>
+      <div className="wordmark">stills.</div>
       {scenes.map((entry, index) => (
         <a
           key={entry.name}

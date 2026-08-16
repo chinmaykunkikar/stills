@@ -9,10 +9,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en">
-      <body>
-        <div className="wordmark">stills.</div>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
