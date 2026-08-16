@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: PageProps<"/[name]">): Promis
   const entry = scenes[sceneIndex(name)];
   const title = `${entry.title} · stills.`;
   const description = `one photograph rebuilt as a 3D scene you can look around inside. shot on ${entry.meta.camera}, ${entry.meta.date.toLowerCase()}.`;
-  const image = `/og/${entry.name}.jpg`;
+  const image = entry.thumb;
   return {
     title,
     description,
@@ -24,9 +24,9 @@ export async function generateMetadata({ params }: PageProps<"/[name]">): Promis
       title,
       description,
       url: `/${entry.name}/`,
-      images: [{ url: image, width: 1200, height: 630, alt: entry.title }],
+      images: [{ url: image, alt: entry.title }],
     },
-    twitter: { card: "summary_large_image", title, description, images: [image] },
+    twitter: { card: "summary", title, description, images: [image] },
   };
 }
 
