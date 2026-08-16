@@ -1,92 +1,188 @@
 [
   {
-    "name": "IMG_1901",
-    "sog": "sogs/IMG_1901.sog?v=srgb1",
-    "thumb": "thumbs/IMG_1901.jpg?v=srgb1",
+    "name": "photo-01",
+    "sog": "sogs/photo-01.sog?v=2",
+    "thumb": "thumbs/photo-01.jpg?v=2",
     "aspect": 0.75,
-    "focus": 2.2,
+    "focus": 3.79,
     "fov": 67.3,
-    "caption": "IMG_1901 \u00b7 26mm \u00b7 f/1.6 \u00b7 ISO50",
+    "caption": "26mm \u00b7 f/1.75 \u00b7 ISO389",
     "meta": {
-      "camera": "iPhone 15",
-      "lens": "iPhone 15 back dual wide camera 5.96mm f/1.6",
-      "exposure": "26mm \u00b7 f/1.6 \u00b7 1/684 \u00b7 ISO50",
-      "dimensions": "4284 \u00d7 5712",
-      "date": "Aug 3, 2026"
+      "camera": "Pixel 5",
+      "lens": "Google",
+      "exposure": "26mm \u00b7 f/1.75 \u00b7 1/25 \u00b7 ISO389",
+      "dimensions": "3000 \u00d7 4000",
+      "date": "Jul 10, 2023"
     }
   },
   {
-    "name": "IMG_1902",
-    "sog": "sogs/IMG_1902.sog?v=srgb1",
-    "thumb": "thumbs/IMG_1902.jpg?v=srgb1",
+    "name": "photo-02",
+    "sog": "sogs/photo-02.sog?v=2",
+    "thumb": "thumbs/photo-02.jpg?v=2",
     "aspect": 0.75,
-    "focus": 2.25,
-    "fov": 67.3,
-    "caption": "IMG_1902 \u00b7 26mm \u00b7 f/1.6 \u00b7 ISO50",
+    "focus": 45.43,
+    "fov": 40.46,
+    "caption": "f/1.8 \u00b7 ISO320",
     "meta": {
-      "camera": "iPhone 15",
-      "lens": "iPhone 15 back dual wide camera 5.96mm f/1.6",
-      "exposure": "26mm \u00b7 f/1.6 \u00b7 1/702 \u00b7 ISO50",
-      "dimensions": "4284 \u00d7 5712",
-      "date": "Aug 3, 2026"
+      "camera": "OnePlus 11R 5G",
+      "lens": "OnePlus 11R 5G back camera 5.59mm f/1.8",
+      "exposure": "f/1.8 \u00b7 1/33 \u00b7 ISO320",
+      "dimensions": "3072 \u00d7 4096",
+      "date": "Dec 5, 2023"
     }
   },
   {
-    "name": "IMG_1903",
-    "sog": "sogs/IMG_1903.sog?v=srgb1",
-    "thumb": "thumbs/IMG_1903.jpg?v=srgb1",
+    "name": "photo-03",
+    "sog": "sogs/photo-03.sog?v=2",
+    "thumb": "thumbs/photo-03.jpg?v=2",
     "aspect": 0.75,
-    "focus": 2.29,
-    "fov": 67.3,
-    "caption": "IMG_1903 \u00b7 26mm \u00b7 f/1.6 \u00b7 ISO50",
+    "focus": 4.16,
+    "fov": 40.46,
+    "caption": "f/1.8 \u00b7 ISO50",
     "meta": {
-      "camera": "iPhone 15",
-      "lens": "iPhone 15 back dual wide camera 5.96mm f/1.6",
-      "exposure": "26mm \u00b7 f/1.6 \u00b7 1/675 \u00b7 ISO50",
-      "dimensions": "4284 \u00d7 5712",
-      "date": "Aug 3, 2026"
+      "camera": "OnePlus 11R 5G",
+      "lens": "OnePlus 11R 5G back camera 5.59mm f/1.8",
+      "exposure": "f/1.8 \u00b7 1/209 \u00b7 ISO50",
+      "dimensions": "3072 \u00d7 4096",
+      "date": "Dec 31, 2023"
     }
   },
   {
-    "name": "IMG_1904",
-    "sog": "sogs/IMG_1904.sog?v=srgb1",
-    "thumb": "thumbs/IMG_1904.jpg?v=srgb1",
+    "name": "photo-04",
+    "sog": "sogs/photo-04.sog?v=2",
+    "thumb": "thumbs/photo-04.jpg?v=2",
     "aspect": 0.75,
-    "focus": 2.36,
-    "fov": 67.3,
-    "caption": "IMG_1904 \u00b7 26mm \u00b7 f/1.6 \u00b7 ISO50",
+    "focus": 20.92,
+    "fov": 40.46,
+    "caption": "f/1.8 \u00b7 ISO50",
     "meta": {
-      "camera": "iPhone 15",
-      "lens": "iPhone 15 back dual wide camera 5.96mm f/1.6",
-      "exposure": "26mm \u00b7 f/1.6 \u00b7 1/662 \u00b7 ISO50",
-      "dimensions": "4284 \u00d7 5712",
-      "date": "Aug 3, 2026"
+      "camera": "OnePlus 11R 5G",
+      "lens": "OnePlus 11R 5G back camera 5.59mm f/1.8",
+      "exposure": "f/1.8 \u00b7 1/864 \u00b7 ISO50",
+      "dimensions": "3072 \u00d7 4096",
+      "date": "Oct 12, 2024"
     }
   },
   {
-    "name": "IMG_1906",
-    "sog": "sogs/IMG_1906.sog?v=srgb1",
-    "thumb": "thumbs/IMG_1906.jpg?v=srgb1",
+    "name": "photo-05",
+    "sog": "sogs/photo-05.sog?v=2",
+    "thumb": "thumbs/photo-05.jpg?v=2",
     "aspect": 0.75,
-    "focus": 2.25,
-    "fov": 67.3,
-    "caption": "IMG_1906 \u00b7 26mm \u00b7 f/1.6 \u00b7 ISO50",
+    "focus": 11.88,
+    "fov": 40.46,
+    "caption": "f/1.8 \u00b7 ISO50",
     "meta": {
-      "camera": "iPhone 15",
-      "lens": "iPhone 15 back dual wide camera 5.96mm f/1.6",
-      "exposure": "26mm \u00b7 f/1.6 \u00b7 1/769 \u00b7 ISO50",
-      "dimensions": "4284 \u00d7 5712",
-      "date": "Aug 3, 2026"
+      "camera": "OnePlus 11R 5G",
+      "lens": "OnePlus 11R 5G back camera 5.59mm f/1.8",
+      "exposure": "f/1.8 \u00b7 1/523 \u00b7 ISO50",
+      "dimensions": "3072 \u00d7 4096",
+      "date": "Nov 5, 2024"
     }
   },
   {
-    "name": "IMG_1908",
-    "sog": "sogs/IMG_1908.sog?v=srgb1",
-    "thumb": "thumbs/IMG_1908.jpg?v=srgb1",
+    "name": "photo-06",
+    "sog": "sogs/photo-06.sog?v=2",
+    "thumb": "thumbs/photo-06.jpg?v=2",
+    "aspect": 0.75,
+    "focus": 33.86,
+    "fov": 39.65,
+    "caption": "48mm \u00b7 f/1.8 \u00b7 ISO640",
+    "meta": {
+      "camera": "OnePlus 11R 5G",
+      "lens": "OnePlus 11R 5G back camera 5.59mm f/1.8",
+      "exposure": "48mm \u00b7 f/1.8 \u00b7 1/50 \u00b7 ISO640",
+      "dimensions": "3072 \u00d7 4096",
+      "date": "May 3, 2025"
+    }
+  },
+  {
+    "name": "photo-07",
+    "sog": "sogs/photo-07.sog?v=2",
+    "thumb": "thumbs/photo-07.jpg?v=2",
+    "aspect": 0.75,
+    "focus": 2.31,
+    "fov": 71.59,
+    "caption": "24mm \u00b7 f/1.8 \u00b7 ISO640",
+    "meta": {
+      "camera": "OnePlus 11R 5G",
+      "lens": "OnePlus 11R 5G back camera 5.59mm f/1.8",
+      "exposure": "24mm \u00b7 f/1.8 \u00b7 1/50 \u00b7 ISO640",
+      "dimensions": "3072 \u00d7 4096",
+      "date": "May 11, 2025"
+    }
+  },
+  {
+    "name": "photo-08",
+    "sog": "sogs/photo-08.sog?v=2",
+    "thumb": "thumbs/photo-08.jpg?v=2",
+    "aspect": 0.75,
+    "focus": 4.34,
+    "fov": 39.65,
+    "caption": "48mm \u00b7 f/1.8 \u00b7 ISO50",
+    "meta": {
+      "camera": "OnePlus 11R 5G",
+      "lens": "OnePlus 11R 5G back camera 5.59mm f/1.8",
+      "exposure": "48mm \u00b7 f/1.8 \u00b7 1/654 \u00b7 ISO50",
+      "dimensions": "3072 \u00d7 4096",
+      "date": "Jul 27, 2025"
+    }
+  },
+  {
+    "name": "photo-09",
+    "sog": "sogs/photo-09.sog?v=2",
+    "thumb": "thumbs/photo-09.jpg?v=2",
+    "aspect": 0.75,
+    "focus": 6.25,
+    "fov": 39.65,
+    "caption": "48mm \u00b7 f/1.8 \u00b7 ISO64",
+    "meta": {
+      "camera": "OnePlus 11R 5G",
+      "lens": "OnePlus 11R 5G back camera 5.59mm f/1.8",
+      "exposure": "48mm \u00b7 f/1.8 \u00b7 1/9070 \u00b7 ISO64",
+      "dimensions": "3072 \u00d7 4096",
+      "date": "Jul 29, 2025"
+    }
+  },
+  {
+    "name": "photo-10",
+    "sog": "sogs/photo-10.sog?v=2",
+    "thumb": "thumbs/photo-10.jpg?v=2",
+    "aspect": 0.75,
+    "focus": 133.97,
+    "fov": 71.59,
+    "caption": "24mm \u00b7 f/1.8 \u00b7 ISO50",
+    "meta": {
+      "camera": "OnePlus 11R 5G",
+      "lens": "OnePlus 11R 5G back camera 5.59mm f/1.8",
+      "exposure": "24mm \u00b7 f/1.8 \u00b7 1/2864 \u00b7 ISO50",
+      "dimensions": "2304 \u00d7 3072",
+      "date": "Jul 31, 2025"
+    }
+  },
+  {
+    "name": "photo-11",
+    "sog": "sogs/photo-11.sog?v=2",
+    "thumb": "thumbs/photo-11.jpg?v=2",
+    "aspect": 0.75,
+    "focus": 54.76,
+    "fov": 26.67,
+    "caption": "73mm \u00b7 f/5.6 \u00b7 ISO100",
+    "meta": {
+      "camera": "ILCE-6400",
+      "lens": "E PZ 16-50mm F3.5-5.6 OSS",
+      "exposure": "73mm \u00b7 f/5.6 \u00b7 1/640 \u00b7 ISO100",
+      "dimensions": "1365 \u00d7 1820",
+      "date": "Dec 14, 2025"
+    }
+  },
+  {
+    "name": "photo-12",
+    "sog": "sogs/photo-12.sog?v=2",
+    "thumb": "thumbs/photo-12.jpg?v=2",
     "aspect": 0.75,
     "focus": 2.43,
     "fov": 67.3,
-    "caption": "IMG_1908 \u00b7 26mm \u00b7 f/1.6 \u00b7 ISO50",
+    "caption": "26mm \u00b7 f/1.6 \u00b7 ISO50",
     "meta": {
       "camera": "iPhone 15",
       "lens": "iPhone 15 back dual wide camera 5.96mm f/1.6",

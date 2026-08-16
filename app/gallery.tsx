@@ -237,7 +237,7 @@ export default function Gallery({ initialScene }: GalleryProps) {
                 pointScene(nx, ny);
               }}
             >
-              <img src={detailEntry.thumb} alt={detailEntry.name} />
+              <img src={detailEntry.thumb} alt={`photograph ${detailIndex + 1}`} />
               <span className="chip">3D</span>
             </div>
           </a>
@@ -279,7 +279,7 @@ export default function Gallery({ initialScene }: GalleryProps) {
                   frameRefs.current[index] = el;
                 }}
               >
-                <img src={entry.thumb} alt={entry.name} />
+                <img src={entry.thumb} alt={`photograph ${index + 1}`} />
                 <span className="chip">3D</span>
               </div>
               <div
