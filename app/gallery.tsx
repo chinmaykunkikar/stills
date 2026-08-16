@@ -246,51 +246,38 @@ export default function Gallery({ initialScene }: GalleryProps) {
     );
   }
 
-  const columns: { entry: (typeof scenes)[number]; index: number }[][] = [[], []];
-  scenes.forEach((entry, index) => columns[index % 2].push({ entry, index }));
-
   return (
-    <div className="stream" style={{ viewTransitionName: "gallery-shell" }}>
-      {columns.map((column, columnIndex) => (
-        <div className={columnIndex === 1 ? "col offset" : "col"} key={columnIndex}>
-          {column.map(({ entry, index }) => (
-            <a
-              key={entry.name}
-              href={`/${entry.name}/`}
-              className={[
-                "item",
-                liveIndex === index ? "live" : "",
-                loadingIndex === index ? "loading" : "",
-              ]
-                .filter(Boolean)
-                .join(" ")}
-              onClick={(event) => {
-                event.preventDefault();
-                openScene(entry.name);
-              }}
-              onPointerEnter={() => handleEnter(index)}
-              onPointerLeave={handleLeave}
-              onPointerMove={(event) => handleMove(index, event)}
-            >
-              <div
-                className="frame"
-                style={{ viewTransitionName: `photo-${entry.name}` }}
-                ref={(el) => {
-                  frameRefs.current[index] = el;
-                }}
-              >
-                <img src={entry.thumb} alt={`photograph ${index + 1}`} />
-                <span className="chip">3D</span>
-              </div>
-              <div
-                className="caption"
-                style={{ viewTransitionName: `photo-details-${entry.name}` }}
-              >
-                {entry.caption}
-              </div>
-            </a>
-          ))}
-        </div>
+    <div className="wall" style={{ viewTransitionName: "gallery-shell" }}>
+      {scenes.map((entry, index) => (
+        <a
+          key={entry.name}
+          href={`/${entry.name}/`}
+          className={[
+            "item",
+            liveIndex === index ? "live" : "",
+            loadingIndex === index ? "loading" : "",
+          ]
+            .filter(Boolean)
+            .join(" ")}
+          onClick={(event) => {
+            event.preventDefault();
+            openScene(entry.name);
+          }}
+          onPointerEnter={() => handleEnter(index)}
+          onPointerLeave={handleLeave}
+          onPointerMove={(event) => handleMove(index, event)}
+        >
+          <div
+            className="frame"
+            style={{ viewTransitionName: `photo-${entry.name}` }}
+            ref={(el) => {
+              frameRefs.current[index] = el;
+            }}
+          >
+            <img src={entry.thumb} alt={`photograph ${index + 1}`} />
+            <span className="chip">3D</span>
+          </div>
+        </a>
       ))}
     </div>
   );
