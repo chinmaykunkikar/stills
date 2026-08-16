@@ -1,17 +1,10 @@
 import type { SplatMesh } from "@sparkjsdev/spark";
-
-export type SceneEntry = {
-  name: string;
-  sog: string;
-  thumb: string;
-  aspect: number;
-  focus: number;
-  fov: number;
-  caption: string;
-};
+import type { SceneEntry } from "./scenes";
 
 const PARALLAX_METERS = 0.08;
 const SMOOTHING = 8;
+const DRIFT_X = 0.48;
+const DRIFT_Y = 0.14;
 const PROBE_POINTS = [
   [0.5, 0.5],
   [0.2, 0.2],
@@ -29,6 +22,16 @@ type Viewer = {
 let viewerPromise: Promise<Viewer> | null = null;
 let viewerInstance: Viewer | null = null;
 let sessionToken = 0;
+let driftEnabled = false;
+let pointerHeld = false;
+
+export function setSceneDrift(on: boolean): void {
+  driftEnabled = on;
+}
+
+export function holdScenePointer(on: boolean): void {
+  pointerHeld = on;
+}
 
 export async function activateScene(entry: SceneEntry, frame: HTMLElement): Promise<boolean> {
   const token = ++sessionToken;
@@ -69,6 +72,7 @@ async function createViewer(): Promise<Viewer> {
   let currentSplat: SplatMesh | null = null;
   let currentUrl: string | null = null;
   let active = false;
+  let liveStart = 0;
   let renderUntil = 0;
   let lastTime = 0;
 
@@ -142,7 +146,8 @@ async function createViewer(): Promise<Viewer> {
     }
 
     active = true;
-    renderUntil = performance.now() + 1000;
+    liveStart = performance.now();
+    renderUntil = liveStart + 1000;
     return true;
   }
 
@@ -159,8 +164,17 @@ async function createViewer(): Promise<Viewer> {
     const dt = Math.min((time - lastTime) / 1000, 0.1);
     lastTime = time;
     if (!active) return;
+    const drifting = driftEnabled && !pointerHeld;
+    if (drifting) {
+      const elapsed = time - liveStart;
+      desired.set(
+        DRIFT_X * Math.sin(0.00072 * elapsed) * PARALLAX_METERS,
+        DRIFT_Y * Math.sin(0.00043 * elapsed + 0.8) * PARALLAX_METERS,
+        0,
+      );
+    }
     const settling = camera.position.distanceTo(desired) > 0.0005;
-    if (!settling && performance.now() > renderUntil) return;
+    if (!drifting && !settling && performance.now() > renderUntil) return;
     camera.position.lerp(desired, 1 - Math.exp(-SMOOTHING * dt));
     camera.lookAt(target);
     renderer.render(scene3d, camera);
