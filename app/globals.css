@@ -15,7 +15,10 @@ body {
   display: block; position: relative;
   color: inherit; text-decoration: none; cursor: pointer;
 }
-.frame { position: relative; overflow: hidden; aspect-ratio: 3 / 4; }
+.frame {
+  position: relative; overflow: hidden; aspect-ratio: 3 / 4;
+  touch-action: pan-y;
+}
 .frame img {
   width: 100%; height: 100%; object-fit: cover; display: block;
   transform: scale(1.018);
@@ -54,8 +57,15 @@ body {
   0%, 100% { opacity: 0.25; }
   50% { opacity: 1; }
 }
-@media (max-width: 720px) {
+@media (max-width: 959px) {
+  .wall { grid-template-columns: repeat(2, 1fr); }
+  .wall .item:last-child:nth-child(odd) { grid-column: span 2; }
+  .wall .item:last-child:nth-child(odd) .frame { aspect-ratio: 3 / 2; }
+}
+@media (max-width: 559px) {
   .wall { grid-template-columns: 1fr; }
+  .wall .item:last-child:nth-child(odd) { grid-column: auto; }
+  .wall .item:last-child:nth-child(odd) .frame { aspect-ratio: 3 / 4; }
 }
 @media (prefers-reduced-motion: reduce) {
   .frame canvas { transition: none; }
@@ -66,6 +76,10 @@ body {
 .detail {
   min-height: 100dvh; display: flex; align-items: center; justify-content: center;
   padding: 72px 24px;
+}
+@media (max-width: 959px) {
+  .detail { align-items: flex-start; padding: 60px 0 32px; }
+  .detail-panel { padding: 16px 20px 28px; }
 }
 .detail-inner {
   display: flex; flex-direction: column-reverse;
