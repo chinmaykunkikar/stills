@@ -5,7 +5,8 @@ body {
 }
 .wordmark {
   position: fixed; top: 20px; left: 24px; z-index: 2;
-  color: #fff; mix-blend-mode: difference;
+  color: #f2eee5;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.9), 0 0 3px rgba(0, 0, 0, 0.8);
   font-size: 13px; letter-spacing: 0.02em; text-transform: lowercase;
   max-width: calc(100vw - 140px);
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
@@ -15,7 +16,8 @@ body {
   position: fixed; top: 5px; right: 8px; z-index: 3;
   appearance: none; background: none; border: 0; padding: 15px 16px;
   font-family: inherit; font-size: 13px; letter-spacing: 0.02em;
-  text-transform: lowercase; color: #fff; mix-blend-mode: difference;
+  text-transform: lowercase; color: #f2eee5;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.9), 0 0 3px rgba(0, 0, 0, 0.8);
   cursor: pointer; -webkit-tap-highlight-color: transparent;
   transition: opacity 0.2s;
 }
@@ -113,8 +115,11 @@ body {
 .detail-photo {
   position: relative; z-index: 1; display: block;
   background: #0a0a0a; cursor: pointer;
+  width: fit-content; max-width: 100%; margin-inline: auto;
 }
-.detail-photo .frame { width: 100%; height: auto; }
+.detail-photo .frame {
+  width: auto; height: min(calc(100dvh - 200px), calc(100vw * 4 / 3));
+}
 @media (min-width: 960px) {
   .detail-inner { flex-direction: row-reverse; align-items: stretch; }
   .detail-panel { width: 320px; flex: none; }
