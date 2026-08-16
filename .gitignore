@@ -40,3 +40,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .gstack/
+
+# icon source lives outside the repo; never commit it
+stills_favicon.png
