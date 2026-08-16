@@ -80,9 +80,9 @@
     }
   },
   {
-    "name": "diskit-gomba",
-    "sog": "sogs/diskit-gomba.sog?v=2",
-    "thumb": "thumbs/diskit-gomba.jpg?v=2",
+    "name": "diskit-gompa",
+    "sog": "sogs/diskit-gompa.sog?v=2",
+    "thumb": "thumbs/diskit-gompa.jpg?v=2",
     "aspect": 0.75,
     "focus": 4.34,
     "fov": 39.65,
