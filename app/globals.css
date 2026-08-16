@@ -107,9 +107,13 @@ body {
   .detail-photo { flex: none; width: fit-content; max-width: calc(100% - 320px); }
   .detail-photo .frame { width: auto; height: min(calc(100dvh - 240px), 840px); min-height: 460px; }
 }
+.detail-title {
+  margin: 0 0 10px; font-size: 15px; font-weight: 500; line-height: 1.35;
+  color: #f2eee5; letter-spacing: 0.01em; text-wrap: balance;
+}
 .detail-head {
   display: flex; justify-content: space-between; align-items: baseline;
-  color: #e8e4da; font-size: 13px;
+  color: #a9a49b; font-size: 12px;
 }
 .detail-count { color: #6f6b63; font-size: 10px; letter-spacing: 0.08em; }
 .detail-specs { margin: 14px 0 0; }

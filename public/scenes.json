@@ -1,6 +1,7 @@
 [
   {
     "name": "lepakshi-pillars",
+    "title": "Lepakshi Pillars",
     "sog": "sogs/lepakshi-pillars.sog?v=2",
     "thumb": "thumbs/lepakshi-pillars.jpg?v=2",
     "aspect": 0.75,
@@ -19,6 +20,7 @@
   },
   {
     "name": "yercaud-hills",
+    "title": "Yercaud Hills",
     "sog": "sogs/yercaud-hills.sog?v=2",
     "thumb": "thumbs/yercaud-hills.jpg?v=2",
     "aspect": 0.75,
@@ -37,6 +39,7 @@
   },
   {
     "name": "aadi-yogi",
+    "title": "Adiyogi, Chikkaballapur",
     "sog": "sogs/aadi-yogi.sog?v=2",
     "thumb": "thumbs/aadi-yogi.jpg?v=2",
     "aspect": 0.75,
@@ -55,6 +58,7 @@
   },
   {
     "name": "golden-hour",
+    "title": "Golden Hour",
     "sog": "sogs/golden-hour.sog?v=2",
     "thumb": "thumbs/golden-hour.jpg?v=2",
     "aspect": 0.75,
@@ -73,6 +77,7 @@
   },
   {
     "name": "gokarna-backwaters",
+    "title": "Gokarna Backwaters",
     "sog": "sogs/gokarna-backwaters.sog?v=2",
     "thumb": "thumbs/gokarna-backwaters.jpg?v=2",
     "aspect": 0.75,
@@ -91,6 +96,7 @@
   },
   {
     "name": "beachside-resort",
+    "title": "A Beach Side Resort",
     "sog": "sogs/beachside-resort.sog?v=2",
     "thumb": "thumbs/beachside-resort.jpg?v=2",
     "aspect": 0.75,
@@ -109,6 +115,7 @@
   },
   {
     "name": "diskit-gompa",
+    "title": "Diskit Gompa, Ladakh",
     "sog": "sogs/diskit-gompa.sog?v=2",
     "thumb": "thumbs/diskit-gompa.jpg?v=2",
     "aspect": 0.75,
@@ -127,6 +134,7 @@
   },
   {
     "name": "nyoma-ladakh",
+    "title": "Nyoma, Ladakh",
     "sog": "sogs/nyoma-ladakh.sog?v=2",
     "thumb": "thumbs/nyoma-ladakh.jpg?v=2",
     "aspect": 0.75,
@@ -145,6 +153,7 @@
   },
   {
     "name": "marine-drive",
+    "title": "Marine Drive Promenade",
     "sog": "sogs/marine-drive.sog?v=2",
     "thumb": "thumbs/marine-drive.jpg?v=2",
     "aspect": 0.75,

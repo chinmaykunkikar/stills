@@ -200,6 +200,7 @@ export default function Gallery({ initialScene }: GalleryProps) {
             aria-label="Photo details"
             style={{ viewTransitionName: `photo-details-${detailEntry.name}` }}
           >
+            <h1 className="detail-title">{detailEntry.title}</h1>
             <header className="detail-head">
               <span>{detailEntry.meta.date}</span>
               <span className="detail-count">
@@ -252,7 +253,7 @@ export default function Gallery({ initialScene }: GalleryProps) {
                 pointScene(nx, ny);
               }}
             >
-              <img src={detailEntry.thumb} alt={`photograph ${detailIndex + 1}`} />
+              <img src={detailEntry.thumb} alt={detailEntry.title} />
               <span className="chip">3D</span>
             </div>
           </a>
@@ -289,7 +290,7 @@ export default function Gallery({ initialScene }: GalleryProps) {
               frameRefs.current[index] = el;
             }}
           >
-            <img src={entry.thumb} alt={`photograph ${index + 1}`} />
+            <img src={entry.thumb} alt={entry.title} />
             <span className="chip">3D</span>
           </div>
         </a>

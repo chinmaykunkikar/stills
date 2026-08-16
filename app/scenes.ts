@@ -10,6 +10,7 @@ export type SceneMeta = {
 
 export type SceneEntry = {
   name: string;
+  title: string;
   sog: string;
   thumb: string;
   aspect: number;

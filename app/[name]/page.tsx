@@ -10,7 +10,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps<"/[name]">): Promise<Metadata> {
   const { name } = await params;
-  return { title: `scene ${sceneIndex(name) + 1} · stills.` };
+  return { title: `${scenes[sceneIndex(name)].title} · stills.` };
 }
 
 export default async function ScenePage({ params }: PageProps<"/[name]">) {
