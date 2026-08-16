@@ -1,7 +1,7 @@
 import type { SplatMesh } from "@sparkjsdev/spark";
 import type { SceneEntry } from "./scenes";
 
-const PARALLAX_METERS = 0.08;
+const SWEEP = 0.15;
 const SMOOTHING = 8;
 const DRIFT_X = 0.48;
 const DRIFT_Y = 0.14;
@@ -71,6 +71,7 @@ async function createViewer(): Promise<Viewer> {
   const probePixel = new Uint8Array(4);
   let currentSplat: SplatMesh | null = null;
   let currentUrl: string | null = null;
+  let parallax = 0.08;
   let active = false;
   let liveStart = 0;
   let renderUntil = 0;
@@ -115,6 +116,10 @@ async function createViewer(): Promise<Viewer> {
     }
 
     camera.fov = entry.fov || 60;
+    parallax = Math.min(
+      (SWEEP / 2) * entry.focus * Math.tan((camera.fov * Math.PI) / 360),
+      entry.maxParallax,
+    );
     camera.aspect = frame.clientWidth / frame.clientHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(frame.clientWidth, frame.clientHeight, false);
@@ -156,7 +161,7 @@ async function createViewer(): Promise<Viewer> {
   }
 
   function pointTo(nx: number, ny: number): void {
-    desired.set(nx * PARALLAX_METERS, -ny * PARALLAX_METERS, 0);
+    desired.set(nx * parallax, -ny * parallax, 0);
     renderUntil = performance.now() + 300;
   }
 
@@ -168,12 +173,12 @@ async function createViewer(): Promise<Viewer> {
     if (drifting) {
       const elapsed = time - liveStart;
       desired.set(
-        DRIFT_X * Math.sin(0.00072 * elapsed) * PARALLAX_METERS,
-        DRIFT_Y * Math.sin(0.00043 * elapsed + 0.8) * PARALLAX_METERS,
+        DRIFT_X * Math.sin(0.00072 * elapsed) * parallax,
+        DRIFT_Y * Math.sin(0.00043 * elapsed + 0.8) * parallax,
         0,
       );
     }
-    const settling = camera.position.distanceTo(desired) > 0.0005;
+    const settling = camera.position.distanceTo(desired) > parallax * 0.006;
     if (!drifting && !settling && performance.now() > renderUntil) return;
     camera.position.lerp(desired, 1 - Math.exp(-SMOOTHING * dt));
     camera.lookAt(target);
