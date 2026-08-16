@@ -1,38 +1,20 @@
 [
   {
-    "name": "marine-drive",
-    "sog": "sogs/marine-drive.sog?v=2",
-    "thumb": "thumbs/marine-drive.jpg?v=2",
+    "name": "lepakshi-pillars",
+    "sog": "sogs/lepakshi-pillars.sog?v=2",
+    "thumb": "thumbs/lepakshi-pillars.jpg?v=2",
     "aspect": 0.75,
-    "focus": 3.79,
-    "fov": 67.3,
-    "maxParallax": 0.222,
+    "focus": 2.31,
+    "fov": 71.59,
+    "maxParallax": 0.13,
     "sweep": 0.15,
-    "caption": "26mm \u00b7 f/1.75 \u00b7 ISO389",
-    "meta": {
-      "camera": "Pixel 5",
-      "lens": "Google",
-      "exposure": "26mm \u00b7 f/1.75 \u00b7 1/25 \u00b7 ISO389",
-      "dimensions": "3000 \u00d7 4000",
-      "date": "Jul 10, 2023"
-    }
-  },
-  {
-    "name": "gokarna-backwaters",
-    "sog": "sogs/gokarna-backwaters.sog?v=2",
-    "thumb": "thumbs/gokarna-backwaters.jpg?v=2",
-    "aspect": 0.75,
-    "focus": 4.16,
-    "fov": 40.46,
-    "maxParallax": 0.292,
-    "sweep": 0.15,
-    "caption": "f/1.8 \u00b7 ISO50",
+    "caption": "24mm \u00b7 f/1.8 \u00b7 ISO640",
     "meta": {
       "camera": "OnePlus 11R 5G",
       "lens": "OnePlus 11R 5G back camera 5.59mm f/1.8",
-      "exposure": "f/1.8 \u00b7 1/209 \u00b7 ISO50",
+      "exposure": "24mm \u00b7 f/1.8 \u00b7 1/50 \u00b7 ISO640",
       "dimensions": "3072 \u00d7 4096",
-      "date": "Dec 31, 2023"
+      "date": "May 11, 2025"
     }
   },
   {
@@ -54,6 +36,60 @@
     }
   },
   {
+    "name": "aadi-yogi",
+    "sog": "sogs/aadi-yogi.sog?v=2",
+    "thumb": "thumbs/aadi-yogi.jpg?v=2",
+    "aspect": 0.75,
+    "focus": 54.76,
+    "fov": 26.67,
+    "maxParallax": 2.818,
+    "sweep": 0.1,
+    "caption": "73mm \u00b7 f/5.6 \u00b7 ISO100",
+    "meta": {
+      "camera": "ILCE-6400",
+      "lens": "E PZ 16-50mm F3.5-5.6 OSS",
+      "exposure": "73mm \u00b7 f/5.6 \u00b7 1/640 \u00b7 ISO100",
+      "dimensions": "1365 \u00d7 1820",
+      "date": "Dec 14, 2025"
+    }
+  },
+  {
+    "name": "golden-hour",
+    "sog": "sogs/golden-hour.sog?v=2",
+    "thumb": "thumbs/golden-hour.jpg?v=2",
+    "aspect": 0.75,
+    "focus": 2.43,
+    "fov": 67.3,
+    "maxParallax": 0.225,
+    "sweep": 0.15,
+    "caption": "26mm \u00b7 f/1.6 \u00b7 ISO50",
+    "meta": {
+      "camera": "iPhone 15",
+      "lens": "iPhone 15 back dual wide camera 5.96mm f/1.6",
+      "exposure": "26mm \u00b7 f/1.6 \u00b7 1/763 \u00b7 ISO50",
+      "dimensions": "4284 \u00d7 5712",
+      "date": "Aug 3, 2026"
+    }
+  },
+  {
+    "name": "gokarna-backwaters",
+    "sog": "sogs/gokarna-backwaters.sog?v=2",
+    "thumb": "thumbs/gokarna-backwaters.jpg?v=2",
+    "aspect": 0.75,
+    "focus": 4.16,
+    "fov": 40.46,
+    "maxParallax": 0.292,
+    "sweep": 0.15,
+    "caption": "f/1.8 \u00b7 ISO50",
+    "meta": {
+      "camera": "OnePlus 11R 5G",
+      "lens": "OnePlus 11R 5G back camera 5.59mm f/1.8",
+      "exposure": "f/1.8 \u00b7 1/209 \u00b7 ISO50",
+      "dimensions": "3072 \u00d7 4096",
+      "date": "Dec 31, 2023"
+    }
+  },
+  {
     "name": "beachside-resort",
     "sog": "sogs/beachside-resort.sog?v=2",
     "thumb": "thumbs/beachside-resort.jpg?v=2",
@@ -69,24 +105,6 @@
       "exposure": "f/1.8 \u00b7 1/523 \u00b7 ISO50",
       "dimensions": "3072 \u00d7 4096",
       "date": "Nov 5, 2024"
-    }
-  },
-  {
-    "name": "lepakshi-pillars",
-    "sog": "sogs/lepakshi-pillars.sog?v=2",
-    "thumb": "thumbs/lepakshi-pillars.jpg?v=2",
-    "aspect": 0.75,
-    "focus": 2.31,
-    "fov": 71.59,
-    "maxParallax": 0.13,
-    "sweep": 0.15,
-    "caption": "24mm \u00b7 f/1.8 \u00b7 ISO640",
-    "meta": {
-      "camera": "OnePlus 11R 5G",
-      "lens": "OnePlus 11R 5G back camera 5.59mm f/1.8",
-      "exposure": "24mm \u00b7 f/1.8 \u00b7 1/50 \u00b7 ISO640",
-      "dimensions": "3072 \u00d7 4096",
-      "date": "May 11, 2025"
     }
   },
   {
@@ -126,39 +144,21 @@
     }
   },
   {
-    "name": "aadi-yogi-chikbalapur",
-    "sog": "sogs/aadi-yogi-chikbalapur.sog?v=2",
-    "thumb": "thumbs/aadi-yogi-chikbalapur.jpg?v=2",
+    "name": "marine-drive",
+    "sog": "sogs/marine-drive.sog?v=2",
+    "thumb": "thumbs/marine-drive.jpg?v=2",
     "aspect": 0.75,
-    "focus": 54.76,
-    "fov": 26.67,
-    "maxParallax": 2.818,
-    "sweep": 0.1,
-    "caption": "73mm \u00b7 f/5.6 \u00b7 ISO100",
-    "meta": {
-      "camera": "ILCE-6400",
-      "lens": "E PZ 16-50mm F3.5-5.6 OSS",
-      "exposure": "73mm \u00b7 f/5.6 \u00b7 1/640 \u00b7 ISO100",
-      "dimensions": "1365 \u00d7 1820",
-      "date": "Dec 14, 2025"
-    }
-  },
-  {
-    "name": "golden-hour",
-    "sog": "sogs/golden-hour.sog?v=2",
-    "thumb": "thumbs/golden-hour.jpg?v=2",
-    "aspect": 0.75,
-    "focus": 2.43,
+    "focus": 3.79,
     "fov": 67.3,
-    "maxParallax": 0.225,
+    "maxParallax": 0.222,
     "sweep": 0.15,
-    "caption": "26mm \u00b7 f/1.6 \u00b7 ISO50",
+    "caption": "26mm \u00b7 f/1.75 \u00b7 ISO389",
     "meta": {
-      "camera": "iPhone 15",
-      "lens": "iPhone 15 back dual wide camera 5.96mm f/1.6",
-      "exposure": "26mm \u00b7 f/1.6 \u00b7 1/763 \u00b7 ISO50",
-      "dimensions": "4284 \u00d7 5712",
-      "date": "Aug 3, 2026"
+      "camera": "Pixel 5",
+      "lens": "Google",
+      "exposure": "26mm \u00b7 f/1.75 \u00b7 1/25 \u00b7 ISO389",
+      "dimensions": "3000 \u00d7 4000",
+      "date": "Jul 10, 2023"
     }
   }
 ]
