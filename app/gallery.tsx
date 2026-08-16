@@ -10,6 +10,7 @@ import {
   holdScenePointer,
   pointScene,
   recenterScene,
+  scenesRenderable,
   setSceneDrift,
   tiltScene,
 } from "./splat-viewer";
@@ -102,11 +103,11 @@ export default function Gallery({ initialScene }: GalleryProps) {
     if (!activeScene) return;
     const index = sceneIndex(activeScene);
     const frame = detailFrameRef.current;
-    if (index < 0 || !frame) return;
+    if (index < 0 || !frame || !scenesRenderable()) return;
     let disposed = false;
     let tilting = false;
-    setSceneDrift(true);
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    setSceneDrift(!reducedMotion);
     const detachTilt = reducedMotion
       ? null
       : attachTilt((nx, ny) => {
@@ -161,7 +162,7 @@ export default function Gallery({ initialScene }: GalleryProps) {
 
   async function activateGrid(index: number) {
     const frame = frameRefs.current[index];
-    if (!frame) return;
+    if (!frame || !scenesRenderable()) return;
     indicatorTimer.current = window.setTimeout(
       () => setLoadingIndex(index),
       LOADING_INDICATOR_DELAY_MS,

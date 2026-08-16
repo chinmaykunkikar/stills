@@ -3,6 +3,9 @@ import type { Vector3 } from "three";
 import type { SceneEntry } from "./scenes";
 
 const DEFAULT_SWEEP = 0.15;
+const FETCH_TIMEOUT_MS = 30000;
+const INIT_TIMEOUT_MS = 20000;
+const BYTES_CACHE_LIMIT = 3;
 const SMOOTHING = 8;
 const DRIFT_X = 0.48;
 const DRIFT_Y = 0.14;
@@ -26,6 +29,7 @@ let viewerInstance: Viewer | null = null;
 let sessionToken = 0;
 let driftEnabled = false;
 let pointerHeld = false;
+let viewerBroken = false;
 
 export function setSceneDrift(on: boolean): void {
   driftEnabled = on;
@@ -35,12 +39,28 @@ export function holdScenePointer(on: boolean): void {
   pointerHeld = on;
 }
 
+export function scenesRenderable(): boolean {
+  return !viewerBroken;
+}
+
+function rejectAfter(ms: number): Promise<never> {
+  return new Promise((_, reject) => {
+    window.setTimeout(() => reject(new Error(`timed out after ${ms}ms`)), ms);
+  });
+}
+
 export async function activateScene(entry: SceneEntry, frame: HTMLElement): Promise<boolean> {
+  if (viewerBroken) return false;
   const token = ++sessionToken;
-  if (!viewerPromise) viewerPromise = createViewer();
-  const viewer = await viewerPromise;
-  if (token !== sessionToken) return false;
-  return viewer.activate(entry, frame, token);
+  try {
+    if (!viewerPromise) viewerPromise = createViewer();
+    const viewer = await viewerPromise;
+    if (token !== sessionToken) return false;
+    return await viewer.activate(entry, frame, token);
+  } catch (error) {
+    console.error("scene could not be rendered, showing the photograph instead:", error);
+    return false;
+  }
 }
 
 export function deactivateScene(): void {
@@ -66,10 +86,22 @@ async function createViewer(): Promise<Viewer> {
 
   const scene3d = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(60, 0.75, 0.01, 1000);
-  const renderer = new THREE.WebGLRenderer({
-    alpha: true,
-    antialias: false,
-    powerPreference: "high-performance",
+  let renderer: InstanceType<typeof THREE.WebGLRenderer>;
+  try {
+    renderer = new THREE.WebGLRenderer({
+      alpha: true,
+      antialias: false,
+      powerPreference: "high-performance",
+    });
+  } catch (error) {
+    viewerBroken = true;
+    throw error;
+  }
+  renderer.domElement.addEventListener("webglcontextlost", (event) => {
+    event.preventDefault();
+    viewerBroken = true;
+    active = false;
+    renderer.domElement.remove();
   });
   renderer.setClearColor(0x000000, 0);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -93,9 +125,22 @@ async function createViewer(): Promise<Viewer> {
   async function fetchSceneBytes(url: string): Promise<ArrayBuffer> {
     const cached = bytesCache.get(url);
     if (cached) return cached;
-    const bytes = await (await fetch(url)).arrayBuffer();
-    bytesCache.set(url, bytes);
-    return bytes;
+    const controller = new AbortController();
+    const timer = window.setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+    try {
+      const response = await fetch(url, { signal: controller.signal });
+      if (!response.ok) throw new Error(`${url} responded ${response.status}`);
+      const bytes = await response.arrayBuffer();
+      bytesCache.set(url, bytes);
+      while (bytesCache.size > BYTES_CACHE_LIMIT) {
+        const oldest = bytesCache.keys().next();
+        if (oldest.done) break;
+        bytesCache.delete(oldest.value);
+      }
+      return bytes;
+    } finally {
+      window.clearTimeout(timer);
+    }
   }
 
   function clearScene(): void {
@@ -137,18 +182,24 @@ async function createViewer(): Promise<Viewer> {
     camera.updateProjectionMatrix();
     renderer.setSize(frame.clientWidth, frame.clientHeight, false);
 
-    if (currentUrl !== entry.sog) {
-      const bytes = await fetchSceneBytes(entry.sog);
-      if (token !== sessionToken) return false;
+    try {
+      if (currentUrl !== entry.sog) {
+        const bytes = await fetchSceneBytes(entry.sog);
+        if (token !== sessionToken) return false;
+        clearScene();
+        const splat = new spark.SplatMesh({ fileBytes: bytes.slice(0), fileName: "scene.sog" });
+        splat.quaternion.set(1, 0, 0, 0);
+        currentSplat = splat;
+        currentUrl = entry.sog;
+        scene3d.add(splat);
+      }
+      if (!currentSplat) return false;
+      await Promise.race([currentSplat.initialized, rejectAfter(INIT_TIMEOUT_MS)]);
+    } catch (error) {
       clearScene();
-      const splat = new spark.SplatMesh({ fileBytes: bytes.slice(0), fileName: "scene.sog" });
-      splat.quaternion.set(1, 0, 0, 0);
-      currentSplat = splat;
-      currentUrl = entry.sog;
-      scene3d.add(splat);
+      canvas.remove();
+      throw error;
     }
-    if (!currentSplat) return false;
-    await currentSplat.initialized;
     if (token !== sessionToken) return false;
 
     target.set(0, 0, -(entry.focus || 2.5));

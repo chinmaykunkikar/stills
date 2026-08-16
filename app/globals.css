@@ -91,6 +91,7 @@ body {
   .frame canvas { transition: none; }
   .loading .frame::after { animation: none; background: none; }
   .loading .chip::before { animation: none; }
+  .close, .missing-link { transition: none; }
 }
 
 .detail {
@@ -120,6 +121,18 @@ body {
   .detail-photo { flex: none; width: fit-content; max-width: calc(100% - 320px); }
   .detail-photo .frame { width: auto; height: min(calc(100dvh - 240px), 840px); min-height: 460px; }
 }
+.missing {
+  min-height: 100dvh; display: flex; align-items: center; justify-content: center;
+  padding: 72px clamp(16px, 5vw, 80px);
+}
+.missing-panel { width: 100%; max-width: 380px; background: #0a0a0a; padding: 18px 20px 20px; }
+.missing-link {
+  display: inline-block; margin-top: 18px;
+  color: #f2eee5; font-size: 12px; letter-spacing: 0.02em;
+  text-decoration: none; border-bottom: 1px solid #3a3a38; padding-bottom: 3px;
+  transition: border-color 0.2s;
+}
+.missing-link:hover { border-bottom-color: #f2eee5; }
 .detail-title {
   margin: 0 0 10px; font-size: 15px; font-weight: 500; line-height: 1.35;
   color: #f2eee5; letter-spacing: 0.01em; text-wrap: balance;
