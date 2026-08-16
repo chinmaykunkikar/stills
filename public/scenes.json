@@ -1,8 +1,8 @@
 [
   {
-    "name": "photo-01",
-    "sog": "sogs/photo-01.sog?v=2",
-    "thumb": "thumbs/photo-01.jpg?v=2",
+    "name": "marine-drive",
+    "sog": "sogs/marine-drive.sog?v=2",
+    "thumb": "thumbs/marine-drive.jpg?v=2",
     "aspect": 0.75,
     "focus": 3.79,
     "fov": 67.3,
@@ -16,9 +16,9 @@
     }
   },
   {
-    "name": "photo-02",
-    "sog": "sogs/photo-02.sog?v=2",
-    "thumb": "thumbs/photo-02.jpg?v=2",
+    "name": "gokarna-backwaters",
+    "sog": "sogs/gokarna-backwaters.sog?v=2",
+    "thumb": "thumbs/gokarna-backwaters.jpg?v=2",
     "aspect": 0.75,
     "focus": 4.16,
     "fov": 40.46,
@@ -32,9 +32,9 @@
     }
   },
   {
-    "name": "photo-03",
-    "sog": "sogs/photo-03.sog?v=2",
-    "thumb": "thumbs/photo-03.jpg?v=2",
+    "name": "yercaud-hills",
+    "sog": "sogs/yercaud-hills.sog?v=2",
+    "thumb": "thumbs/yercaud-hills.jpg?v=2",
     "aspect": 0.75,
     "focus": 20.92,
     "fov": 40.46,
@@ -48,9 +48,9 @@
     }
   },
   {
-    "name": "photo-04",
-    "sog": "sogs/photo-04.sog?v=2",
-    "thumb": "thumbs/photo-04.jpg?v=2",
+    "name": "beachside-resort",
+    "sog": "sogs/beachside-resort.sog?v=2",
+    "thumb": "thumbs/beachside-resort.jpg?v=2",
     "aspect": 0.75,
     "focus": 11.88,
     "fov": 40.46,
@@ -64,9 +64,9 @@
     }
   },
   {
-    "name": "photo-05",
-    "sog": "sogs/photo-05.sog?v=2",
-    "thumb": "thumbs/photo-05.jpg?v=2",
+    "name": "lepakshi-pillars",
+    "sog": "sogs/lepakshi-pillars.sog?v=2",
+    "thumb": "thumbs/lepakshi-pillars.jpg?v=2",
     "aspect": 0.75,
     "focus": 2.31,
     "fov": 71.59,
@@ -80,9 +80,9 @@
     }
   },
   {
-    "name": "photo-06",
-    "sog": "sogs/photo-06.sog?v=2",
-    "thumb": "thumbs/photo-06.jpg?v=2",
+    "name": "diskit-gomba",
+    "sog": "sogs/diskit-gomba.sog?v=2",
+    "thumb": "thumbs/diskit-gomba.jpg?v=2",
     "aspect": 0.75,
     "focus": 4.34,
     "fov": 39.65,
@@ -96,9 +96,9 @@
     }
   },
   {
-    "name": "photo-07",
-    "sog": "sogs/photo-07.sog?v=2",
-    "thumb": "thumbs/photo-07.jpg?v=2",
+    "name": "nyoma-ladakh",
+    "sog": "sogs/nyoma-ladakh.sog?v=2",
+    "thumb": "thumbs/nyoma-ladakh.jpg?v=2",
     "aspect": 0.75,
     "focus": 6.25,
     "fov": 39.65,
@@ -112,9 +112,9 @@
     }
   },
   {
-    "name": "photo-08",
-    "sog": "sogs/photo-08.sog?v=2",
-    "thumb": "thumbs/photo-08.jpg?v=2",
+    "name": "aadi-yogi-chikbalapur",
+    "sog": "sogs/aadi-yogi-chikbalapur.sog?v=2",
+    "thumb": "thumbs/aadi-yogi-chikbalapur.jpg?v=2",
     "aspect": 0.75,
     "focus": 54.76,
     "fov": 26.67,
@@ -128,9 +128,9 @@
     }
   },
   {
-    "name": "photo-09",
-    "sog": "sogs/photo-09.sog?v=2",
-    "thumb": "thumbs/photo-09.jpg?v=2",
+    "name": "golden-hour",
+    "sog": "sogs/golden-hour.sog?v=2",
+    "thumb": "thumbs/golden-hour.jpg?v=2",
     "aspect": 0.75,
     "focus": 2.43,
     "fov": 67.3,
